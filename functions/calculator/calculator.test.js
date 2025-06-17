@@ -30,27 +30,43 @@ describe("add function", () => {
     const inputB = 2;
     expect(calculator.add(inputA, inputB)).toBe(36);
   });
-  test("should return solution even if string number added", () => {
+  test("should return solution when string number added", () => {
     const inputA = "34";
-    const inputB = "12";
+    const inputB = 12;
     expect(calculator.add(inputA, inputB)).toBe(46);
   });
 
-  test("should throw error if non-numeric string inputed (1)", () => {
-    const inputA = "ten";
-    const inputB = "12";
-    expect(() => calculator.add(inputA, inputB)).toThrow(Error);
-  });
-
-  test("should throw error if non-numeric string inputed (2)", () => {
-    const inputA = "hello";
-    const inputB = "fifty";
-    expect(() => calculator.add(inputA, inputB)).toThrow(Error);
-  });
-
-  test("should throw error if non-numeric string inputed (3)", () => {
-    const inputA = {};
+  test("should throw error if non-numeric string inputed (InputA)", () => {
+    const inputA = [
+      BigInt("123456789012343588901234567890"),
+      Symbol("help"),
+      true,
+      "hello",
+      "fifty",
+      [],
+      {},
+    ];
     const inputB = 2;
-    expect(() => calculator.add(inputA, inputB)).toThrow(Error);
+
+    inputA.forEach((element) =>
+      expect(() => calculator.add(element, inputB)).toThrow(Error)
+    );
+  });
+
+  test("should throw error if non-numeric string inputed (InputB)", () => {
+    const inputA = 21;
+    const inputB = [
+      BigInt("123456789012343588901234567890"),
+      Symbol("help"),
+      true,
+      "hello",
+      "fifty",
+      [],
+      {},
+    ];
+
+    inputB.forEach((element) =>
+      expect(() => calculator.add(inputA, element)).toThrow(Error)
+    );
   });
 });

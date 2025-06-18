@@ -69,4 +69,28 @@ describe("add function", () => {
       expect(() => calculator.add(inputA, element)).toThrow(Error)
     );
   });
+
+  test("Check floating point numbers work", () => {
+    const inputA = 4.632942345;
+    const inputB = 6.223245234;
+    expect(calculator.add(inputA, inputB)).toBe(10.856187579);
+  });
+
+  test("Check 0 dealt with correctly", () => {
+    const inputA = 0;
+    const inputB = 9;
+    expect(calculator.add(inputA, inputB)).toBe(9);
+  });
+
+  test("Should throw error if NaN inputted", () => {
+    const inputA = NaN;
+    const inputB = 6;
+    expect(() => calculator.add(inputA, inputB)).toThrow(Error);
+  });
+
+  test("Should return solution for large numbers (12 digits)", () => {
+    const inputA = 126734891289;
+    const inputB = 260518455109;
+    expect(calculator.add(inputA, inputB)).toBe(387253346398);
+  });
 });

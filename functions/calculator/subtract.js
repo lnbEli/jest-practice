@@ -3,6 +3,7 @@ export default function subtract(value1, value2) {
   if (!validateNumberInputs(value1, value2)) {
     throw new Error("Inputs must be number");
   }
+
   //Allows string numbers to be added
   const answer = Number(value1) - Number(value2);
 

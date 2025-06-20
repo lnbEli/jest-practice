@@ -14,12 +14,12 @@ export default function subtract(value1, value2) {
   if (Number.isNaN(Number(value1)) || Number.isNaN(Number(value2))) {
     throw new Error("Inputs must be numbers");
   }
+  //Allows string numbers to be added
   const answer = Number(value1) - Number(value2);
 
-  //const
-
+  // Number trims any trailing zero's added by toFixed
   if (!Number.isInteger(answer)) {
-    return Number(answer.toFixed(9));
+    return Number(answer.toFixed(10));
   }
 
   return answer;

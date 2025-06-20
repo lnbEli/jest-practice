@@ -76,6 +76,18 @@ describe("add function", () => {
     expect(calculator.add(inputA, inputB)).toBe(10.856187579);
   });
 
+  test("Check floating point numbers work (2)", () => {
+    const inputA = 5.5555555;
+    const inputB = 3.4554445;
+    expect(calculator.add(inputA, inputB)).toBe(9.011);
+  });
+
+  test("Check floating point numbers work (3)", () => {
+    const inputA = 4.553465555523;
+    const inputB = 5.457894423243;
+    expect(calculator.add(inputA, inputB)).toBe(10.0113599788);
+  });
+
   test("Check 0 dealt with correctly", () => {
     const inputA = 0;
     const inputB = 9;
@@ -156,10 +168,22 @@ describe("subtract function", () => {
     );
   });
 
-  test("Check floating point numbers work", () => {
+  test("Check floating point numbers work (1)", () => {
+    const inputA = 3.2232452;
+    const inputB = 2.632942345;
+    expect(calculator.subtract(inputA, inputB)).toBe(0.590302855);
+  });
+
+  test("Check floating point numbers work (2)", () => {
     const inputA = 6.223245234;
     const inputB = 4.632942345;
     expect(calculator.subtract(inputA, inputB)).toBe(1.590302889);
+  });
+
+  test("Check floating point numbers work (3)", () => {
+    const inputA = 5.55555555;
+    const inputB = 3.45655555;
+    expect(calculator.subtract(inputA, inputB)).toBe(2.099);
   });
 
   test("Check 0 dealt with correctly", () => {

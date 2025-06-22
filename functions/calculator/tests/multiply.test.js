@@ -57,7 +57,7 @@ describe("mulitply function", () => {
     ];
 
     inputB.forEach((element) =>
-      expect(() => calculator.subtract(inputA, element)).toThrow(Error)
+      expect(() => calculator.multiply(inputA, element)).toThrow(Error)
     );
   });
 

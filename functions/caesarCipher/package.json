@@ -1,0 +1,16 @@
+{
+  "name": "caesarcipher",
+  "version": "1.0.0",
+  "description": "function that takes a string and a shift factor and returns it with each character shifted.",
+  "main": "caesarCipher.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2"
+  }
+}

@@ -27,21 +27,21 @@ describe("caesarCipher function", () => {
     expect(caesarCipher(input, shiftFactor)).toBe("uxptkx max frlmxkbhnl fxg");
   });
 
-  test("test function case preservation (1)", () => {
+  test("test function case/space preservation (1)", () => {
     const shiftFactor = 5;
     const input = "Sweet Dude";
     expect(caesarCipher(input, shiftFactor)).toBe("Xbjjy Izij");
   });
 
-  test("test function case preservation (2)", () => {
+  test("test function case/space preservation (2)", () => {
     const shiftFactor = 8;
-    const input = "I have always wanted to visit Iceland";
+    const input = "I have Always wanted to visit Iceland";
     expect(caesarCipher(input, shiftFactor)).toBe(
-      "Q pidm iteiga eivbml bw dqaqb Qkmtivl"
+      "Q pidm Iteiga eivbml bw dqaqb Qkmtivl"
     );
   });
 
-  test("test function case preservation (3)", () => {
+  test("test function punctuation preservation", () => {
     const shiftFactor = 54;
     const input = "What is happening here? You should be ashamed of yourself!";
     expect(caesarCipher(input, shiftFactor)).toBe(

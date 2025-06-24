@@ -4,31 +4,24 @@ export default function caesarCipher(text, key) {
   const alphabetArray = alphabet.split("");
   const cipherAlphabetObj = {};
 
-  //Creates object of alphabet with corresponding cipher alaphabet
+  // Populate the cipherAlphabetObj with shifted letters
   alphabetArray.forEach((element, index) => {
+    // Map lowercase letters
     cipherAlphabetObj[element] = alphabetArray[(index + key) % alphabet.length];
+    // Map uppercase letters
+    cipherAlphabetObj[element.toUpperCase()] =
+      alphabetArray[(index + key) % alphabet.length].toUpperCase();
   });
 
-  //Creates cipher checking for uppercase
+  // Create the ciphered text by mapping each character in the original text
   const cipheredTextArray = textArray.map((element) => {
     //If space makes no change
-    if (element === " " || element === "?" || element === "!") {
+    if (!/[a-zA-Z]/.test(element)) {
       return element;
-    } else if (element.toUpperCase() === element) {
-      return cipherAlphabetObj[element.toLowerCase()].toUpperCase();
     } else {
       return cipherAlphabetObj[element];
     }
   });
 
-  //Checks for spaces(undefined) in array and adds string space
-  const cipheredText = cipheredTextArray.map((el) => {
-    if (el === undefined) {
-      return " ";
-    } else {
-      return el;
-    }
-  });
-
-  return cipheredText.join("");
+  return cipheredTextArray.join("");
 }

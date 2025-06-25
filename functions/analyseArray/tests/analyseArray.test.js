@@ -54,8 +54,8 @@ describe("analyseArray function", () => {
       expect.objectContaining({
         average: 3,
         min: 1,
-        max: null,
-        length: null,
+        max: 6,
+        length: 4,
       })
     );
   });
@@ -66,8 +66,8 @@ describe("analyseArray function", () => {
       expect.objectContaining({
         average: 16,
         min: 1,
-        max: null,
-        length: null,
+        max: 34,
+        length: 4,
       })
     );
   });
@@ -78,8 +78,32 @@ describe("analyseArray function", () => {
       expect.objectContaining({
         average: 29,
         min: 4,
-        max: null,
-        length: null,
+        max: 65,
+        length: 4,
+      })
+    );
+  });
+
+  test("test function returns object with average and min value and max value", () => {
+    const input = [3553, 145, 456, 65];
+    expect(analyseArray(input)).toEqual(
+      expect.objectContaining({
+        average: 1054.75,
+        min: 65,
+        max: 3553,
+        length: 4,
+      })
+    );
+  });
+
+  test("test function returns object with average, min value and max value and length", () => {
+    const input = [3533, 125, 456, 65, 543, 32];
+    expect(analyseArray(input)).toEqual(
+      expect.objectContaining({
+        average: 792.3333333333,
+        min: 32,
+        max: 3533,
+        length: 6,
       })
     );
   });

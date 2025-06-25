@@ -1,0 +1,16 @@
+{
+  "name": "analysearray",
+  "version": "1.0.0",
+  "description": "function that takes an array of numbers and returns an object with the following properties: average, min, max, and length",
+  "main": "analyseArray.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2"
+  }
+}

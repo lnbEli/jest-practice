@@ -107,4 +107,38 @@ describe("analyseArray function", () => {
       })
     );
   });
+
+  test("test function throws error if array empty", () => {
+    const input = [];
+    expect(() => analyseArray(input)).toThrow(Error);
+  });
+
+  test("test function throws error if item in array not a number", () => {
+    const input = [3, 5, 4, "hello"];
+    expect(() => analyseArray(input)).toThrow(Error);
+  });
+
+  test("test function works properly with single value in array", () => {
+    const input = [6];
+    expect(analyseArray(input)).toEqual(
+      expect.objectContaining({
+        average: 6,
+        min: 6,
+        max: 6,
+        length: 1,
+      })
+    );
+  });
+
+  test("test function works properly with negative values in array", () => {
+    const input = [6, -6, -12, 89];
+    expect(analyseArray(input)).toEqual(
+      expect.objectContaining({
+        average: 19.25,
+        min: -12,
+        max: 89,
+        length: 4,
+      })
+    );
+  });
 });
